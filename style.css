@@ -1,0 +1,337 @@
+/* Common style*/
+header {
+  margin-top: 25px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+body {
+	margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+thead th { 
+  text-align:left; 
+  background: #2C3E50; 
+  color:white;
+  font-weight: normal;
+}
+
+table {
+  border:5px solid #2C3E50;
+  table-layout:fixed;
+}
+
+li {
+  color: #2C3E50;
+  font-family: 'Roboto';
+  text-align: left;
+  text-decoration: none;
+}
+
+
+b {
+  font-family: 'Roboto';
+}
+
+td {
+  white-space:pre-wrap ; 
+  word-wrap:break-word;
+  color: #2C3E50;
+}
+
+td, th {
+  border:none;
+  padding: 5px;
+}
+
+h2 a {
+  font-family: 'Roboto';
+  text-decoration: none;
+}
+
+.btn {
+    background-color: #FFFFFF; 
+    border-radius: 3px;    
+    color: #2C3E50;
+    font-style: "Roboto";
+    font-weight: bold;
+    padding: 6px 6px;
+    font-size: 22px;
+    margin-left: 7;
+    margin-bottom: 7;
+    margin-right: 7;
+    margin-top:7;
+}
+
+.footer {
+  position: relative;
+  padding-bottom: 0px;
+  padding-top: 1px;
+  width: 100%;
+  height: 200px;
+  background-color: #2C3E50;
+}
+
+iframe {
+  border:none;
+  width:100%;
+  border-radius: 3px;
+}
+
+.row{
+    margin-left: 15;
+    margin-right: 15;
+}
+
+.explanation-row{
+  margin-top:20px; 
+  margin-bottom: 20px;
+}
+
+.explanation-div{
+  background-color: #FFFFFF;
+  border-radius: 3px;
+}
+
+img {
+  width: 500px;
+  max-width: 100%; 
+  height: auto;
+}
+
+h1 {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 36;
+}
+
+h2 {
+  font-size: 28;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+h3 {
+  font-size:24;
+  font-family: "Roboto";
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+hr {
+    display: block;
+    margin-top: 2px;
+}
+
+b {
+  font-family: "Roboto";
+}
+
+p {
+  font-size: 16;
+  font-family: "Roboto", sans-serif;
+}
+/* Graphs Style*/
+.volume_by_candidate{
+  display: block; 
+  margin:auto; 
+  height:516px;
+}
+
+.volume_total_weekly {
+  display:block; 
+  margin:auto; 
+  height:280px;
+}
+
+.plottable_star {
+  display: block; 
+  max-height:600px; 
+  max-width:600px;
+  margin: auto;
+}
+
+.top_tweets {
+  margin:auto;
+  border:none; 
+  width:100%; 
+  border-radius: 3px; 
+  height:183px; 
+}
+
+.trends {
+  display: block; 
+  margin:auto; 
+  height:auto; 
+  text-align:center;
+}
+
+.bubble {
+  display: block; 
+  margin:auto; 
+/*  text-align:center;*/
+}
+
+
+.plottable_pie {
+  display: block; 
+  margin:auto; 
+  text-align:center;
+  max-height:500px; 
+  max-width:500px;
+}
+
+.plottable .legend text {
+  text-transform: capitalize;
+}
+
+/*Star Plot Style*/
+.chart {
+  margin-bottom: 10px;
+}
+.star-title {
+  font-size: 18px;
+  font-style: "Roboto";
+  text-transform: capitalize;
+}
+
+.star-label {
+  font-size: 11px;
+  font-style: "Roboto";
+}
+
+.star-origin {
+  fill: #999999;
+}
+.star-axis {
+  stroke: #999999;
+  stroke-width: 2px;
+}
+.star-path {
+  stroke: #2C3E50;
+  stroke-width: 2px;
+  fill: #FFFFFF;
+  fill-opacity: 1;
+}
+
+circle {
+  fill: #2C3E50;
+  transform: scale(1, 1);
+}
+
+
+.node:hover circle {
+  fill: #E6493C;
+  transform: scale(1.2, 1.2);
+}
+
+@media (max-width: 767px) {
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .footer {
+    height: 400px;
+  }
+
+  img {
+    width: 200px;
+    max-width: 100%; 
+  }
+
+  h3 {font-size:16;}
+
+  h2 {font-size: 18;}
+
+  .btn {
+    border-radius: 3px;    
+    padding: 3px 3px;
+    font-size: 16px;
+    margin-left: 4;
+    margin-bottom: 4;
+    margin-right: 4;
+    margin-top:4;
+  }
+
+  .btn span {
+    display: none;
+  }
+  .btn.button-home:after {
+    content: 'Election';
+  }
+  .btn.button-primaire:after {
+    content: 'Primaire';
+  }
+
+  .btn.button-primaire {
+    color: #E6493C;
+  }
+
+  /*Graphs*/
+  .volume_by_candidate {
+    height:250px;
+  }
+  .volume_total_weekly {
+    height:200px;
+  }
+  .plottable_star {
+    margin: auto;
+    max-height:300px; 
+    max-width:300px;
+  }
+
+  .top_tweets {
+    margin:auto;
+    border:none; 
+    width:100%; 
+    border-radius: 3px;
+    overflow: hidden;
+    height:100px; 
+  }
+
+  .row.footer-row{
+    padding-left: 15;
+    padding-right: 15;
+ }
+}
+
+@media (min-width: 1200px){
+  .row {
+    max-width: 1200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+/* Home page (Blue Style)*/
+body.blue-style{background-color: #ECF0F1;}
+hr.blue-style{border-top: 7px solid #2C3E50;}
+a.blue-style{color: #2C3E50;}
+p.blue-style{color: #2C3E50;}
+h1.blue-style{color: #2C3E50;}
+h2.blue-style{color: #2C3E50;}
+h3.blue-style{color: #2C3E50;}
+b.blue-style{color: #2C3E50;}
+i.blue-style{color: #2C3E50;}
+
+/* Primaire page (Red style)*/
+body.red-style {background-color: #E6493C; color: #FFFFFF;}
+hr.red-style{border-top: 7px solid #FFFFFF;}
+h1.red-style{color: #FFFFFF;}
+a.red-style{color: #FFFFFF;}
+h2.red-style{color: #FFFFFF;}
+h3.red-style{color: #FFFFFF;}
+
+/* Commentary*/
+p.commentary{text-align: justify;}
+
+/* Footer style*/
+.footer-style{color: white;}
+h2.footer-style{font-size: 18px;}
+p.footer-style{font-size: 12px; column-count: 2;}

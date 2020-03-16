@@ -1,0 +1,129 @@
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/palantir/plottable/master/plottable.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/palantir/plottable/master/plottable.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>.star-title{fill: #2C3E50;} .star-label{fill: #2C3E50;}</style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90452208-1', 'auto');
+      ga('send', 'pageview');
+    </script>  
+</head>
+<header>
+    <div class="container-fluid">
+        <div class="row vertical-align-md" id="header-panel" >
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" style="text-decoration:none;"><img class="logo" src="big-bang-data-logo.svg" alt="Big Bang Data"></a>
+                <h3>tendances politiques en temps réel</h3>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" 
+                class="btn button-home" role="button"><span>Election générale</span></a>
+                <a href="http://big-bang-data.com/primairegauche" 
+                class="btn button-primaire" role="button" style="color: #E6493C;"><span>Primaire de gauche</span></a>
+                <a href="http://big-bang-data.com/contact.html" 
+                class="btn" role="button" id="button-contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+<body class="blue-style">
+    <!-- First Div (Containing Finance chart radar chart and top tweets)-->
+    <div class="container-fluid">
+        <div class="row" id="top-panel" >
+            <div class="col-md-8 col-sm-12">
+                <!-- Volume par candidats-->
+                <h2 class="blue-style"><a class="blue-style" href="http://big-bang-data.com/volumescandidats.html">Nombre de tweets par jour</a></h2>
+                <hr class="blue-style">
+                <a data-toggle="tooltip" style="text-decoration:none;" title="Courbe évolutive représentant le nombre de tweets mentionnant un candidat à l'élection. Pour plus de détails, cliquer sur le titre.">
+                <svg id="volume_by_candidate" class="volume_by_candidate"></svg></a>
+                <script type="text/javascript" src="js/volume_by_candidate.js"></script>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <h2 class="blue-style">Tweets du jour</h2>
+                        <hr class="blue-style">
+                        <iframe src="data/top_tweets_generale.html" class="top-tweets"></iframe>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                        <!-- Volume Hebdomadaire-->
+                        <h2 class="blue-style">Ces 7 derniers jours</h2>
+                        <hr class="blue-style">
+                        <svg id="volume_total_weekly" class="volume_total_weekly"></svg> 
+                        <script type="text/javascript" src="js/volume_total_weekly.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="middle-panel">
+            <div class="col-md-5 col-sm-12">
+                <!-- Tendances-->
+                <h2 class="blue-style"><a class="blue-style" href="http://big-bang-data.com/tendancescandidats.html">Tendances des tweets</a></h2>
+                <hr class="blue-style">
+                <a href="http://big-bang-data.com/tendancescandidats.html" style="text-decoration:none;" data-toggle="tooltip" title="Diagrammes en étoile représentant le nombre de mentions par domaines pour chaque candidat à l'élection. Pour plus de détails, cliquer sur le graphe.">
+                <div id="trends" style="display: block; margin:auto; text-align:center;"></div></a>
+                <script type="text/javascript" src="js/trends.js"></script> 
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <!-- Radar Chart-->
+                <h2 class="blue-style"><a class="blue-style" href="http://big-bang-data.com/tendancesglobales.html">Tendances globales</a></h2>
+                <hr class="blue-style">
+                <a data-toggle="tooltip" style="text-decoration:none;" title="Diagramme en étoile représentant la répartition des domaines des tweets mentionnant les candidats à l'élection. Pour plus de détails, cliquer sur le titre.">
+                <svg id="plottable_star" class="plottable_star" preserveAspectRatio="xMidYMid meet"></svg></a>
+                <script type="text/javascript" src="js/plottable_radar.js">
+            </script>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="middle-panel">
+            <div class="col-md-6 col-sm-12">
+                <h2 class="blue-style">Hashtag Tendances</h2>
+                <hr class="blue-style">
+                <div id="bubble" class="bubble"></div>
+                <script type="text/javascript" src="js/bubble.js"></script> 
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2 class="blue-style">Derniéres 24h</h2>
+                <hr class="blue-style">
+                <svg id="plottable_pie" class="plottable_pie"></svg>
+                <script type="text/javascript" src="js/plottable_pie.js"></script> 
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer navbar-fixed-bottom">
+    <div class="row footer-row">
+        <div class="col-md-5 col-sm-12">
+            <h2 class="footer-style">Big-Bang-Data Project</h2>
+            <p class="footer-style">
+            Big-Bang-Data est un collectif de data-scientists et de designers réunis autour d'une même passion: le traitement et la visualisation de données. Ce projet s'appuie sur les technologies suivantes: Python, et D3js.
+            Les résultats affichés sur ce site proviennent d'une analyse statistique en temps réel de données récupérées sur l'api publique de Twitter. L'équipe de Big-Bang-Data se réserve le droit de décliner toute responsabilité concernant l'actualité, l'exactitude, la complétude ou la qualité des informations fournies. </p>
+        </div>
+        <div class="col-md-3 col-md-offset-4 col-sm-12">
+            <h2 class="footer-style">Menu</h2>
+            <ul>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com">Home</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/primairegauche">Primaire de gauche</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/contact.html">Contact</a></li>
+            </ul> 
+        </div>
+    </div>
+</footer>
+</html>

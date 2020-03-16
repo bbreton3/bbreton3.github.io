@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/palantir/plottable/master/plottable.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/palantir/plottable/master/plottable.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>.plottable .axis text{fill: #FFFFFF;} .plottable .axis line.tick-mark {stroke: #FFFFFF;} .plottable .gridlines line {stroke: #FFFFFF; opacity: 0.25;} .plottable .axis line.baseline {stroke: #FFFFFF; stroke-width: 1px;}</style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90452208-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<header>
+    <div class="container-fluid">
+        <div class="row vertical-align-md" id="header-panel" >
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" style="text-decoration:none;"><img class="logo" src="big-bang-data-logo-white.svg" alt="Big Bang Data"></a>
+                <h3>tendances politiques en temps réel</h3>
+            </div>
+             <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" 
+                class="btn" role="button" id="button-general">Election générale</a>
+                <a href="http://big-bang-data.com/primairegauche" 
+                class="btn" role="button" id="button-primaire"  style="color: #E6493C;">Primaire de gauche</a>
+                <a href="http://big-bang-data.com/contact.html" 
+                class="btn" role="button" id="button-contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+<body class="red-style">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-sm-12">
+                <h2 class="red-style">Nombre de tweets par jour mentionnant chaque candidat</h2>
+                <hr class="red-style">
+                <svg id="volume_by_candidate" class="volume_by_candidate"></svg>
+                <script type="text/javascript" src="js_primaire/volume_by_candidate.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row explanation-row">
+            <div class="col-md-7 col-sm-12 explanation-div">
+                <h2 class="blue-style">Explications :</h2>
+                <hr class="blue-style">
+                <p class="blue-style">Graphique représentant l’évolution du nombre de tweet qui mentionne chacun des candidats à la primaire de gauche chaque jour. 
+                Le graphique est actualisé toutes les cinq minutes.</p>
+                <p class="blue-style">
+                Un tweet est associé à un candidat lorsque que son nom apparaît dans:
+                <ul>
+                    <li>user mention (@mention)</li>
+                    <li>hashtag (#hashtag)</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer navbar-fixed-bottom">
+    <div class="row footer-row">
+        <div class="col-md-5 col-sm-12">
+            <h2 class="footer-style">Big-Bang-Data Project</h2>
+            <p class="footer-style">
+            Big-Bang-Data est un collectif de data-scientists et de designers réunis autour d'une même passion: le traitement et la visualisation de données. Ce projet s'appuie sur les technologies suivantes: Python, et D3js.
+            Les résultats affichés sur ce site proviennent d'une analyse statistique en temps réel de données récupérées sur l'api publique de Twitter. L'équipe de Big-Bang-Data se réserve le droit de décliner toute responsabilité concernant l'actualité, l'exactitude, la complétude ou la qualité des informations fournies. </p>
+        </div>
+        <div class="col-md-3 col-md-offset-4 col-sm-12">
+            <h2 class="footer-style">Menu</h2>
+            <ul>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com">Home</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/primairegauche">Primaire de gauche</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/contact.html">Contact</a></li>
+            </ul> 
+        </div>
+    </div>
+</footer>
+</html>

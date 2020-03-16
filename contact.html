@@ -1,0 +1,102 @@
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/palantir/plottable/master/plottable.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/palantir/plottable/master/plottable.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90452208-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+
+<header>
+    <div class="container-fluid">
+        <div class="row vertical-align-md" id="header-panel" >
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" style="text-decoration:none;"><img class="logo" src="big-bang-data-logo.svg" alt="Big Bang Data"></a>
+                <h3>tendances politiques en temps réel</h3>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" 
+                class="btn button-home" role="button"><span>Election générale</span></a>
+                <a href="http://big-bang-data.com/primairegauche" 
+                class="btn button-primaire" role="button" style="color: #E6493C;"><span>Primaire de gauche</span></a>
+                <a href="http://big-bang-data.com/contact.html" 
+                class="btn" role="button" id="button-contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body class="blue-style">
+    <!-- First Div (Containing Finance chart radar chart and top tweets)-->
+    <div class="container-fluid">
+        <div class="row" id="top-panel" style="margin-top:20px; margin-bottom: 20px;">
+            <div class="col-md-3 col-sm-12">
+            <h2>L'équipe</h2>
+                <hr class="blue-style">
+                <p><b>Benjamin Breton</b>: Idée originelle, data-Science, développement web, administration serveur et dba.</p>
+                <p><b>Quentin Taiclet</b>: Data-Science et développement.</p>
+                <p><b>Hugo Haeffner</b>: Design.</p>
+                <p><b>Chloë Passavant</b>: Communication.</p>
+
+                <h2>Remerciements</h2>
+                <hr class="blue-style">
+                <p class="commentary">L'équipe de Big Bang Data tient à remercier Adrien, Niki, Aurélien, Timothée et Jérémy dont les conseils avisés ont rendu ce projet possible. Ainsi que tout ceux qui nous ont soutenu tout au long du développement.</p>   
+            </div>
+            <div class="col-md-6 col-sm-12" style="background-color: white; border-radius: 3px;">
+                <!-- Tendances-->
+                <h2>Le Projet</h2>
+                <p class="commentary">Big Bang Data est un collectif de Data Scientists et de designers réunis autour d’un même objectif : le traitement et la visualisation de données de façon fiable et efficace. Á l’heure où les méthodes de sondages sont largement remises en question, notre volonté est d’offrir une vision synthétique et ludique de l’opinion publique.</p><br><p class="commentary">Depuis l’arrivée du Big-Data, la Data Vizualisation est en plein essor. Inédit de ce côté de l’Atlantique, notre blog propose gratuitement une analyse simplifiée des tweets. Notre ambition est de mettre en place une analyse statistique en temps réel de données récupérées sur l’API publique de Twitter. L’élection présidentielle de 2017 est un cas d’étude idéal. En effet, c’est un sujet qui réunit une grande variété de protagonistes et soulève de nombreuses réactions sur les réseaux sociaux, cette combinaison en fait un matériau riche pour notre analyse.</p><br><p class="commentary">Ce blog ne nourrit aucune ambition politique et s’efforce de rester aussi objectif que possible. Il s’adresse avant tout aux curieux, intéressés par la pureté des informations délivrées, par leur analyse et par leur visualisation.</p><br><p class="commentary">
+                La fiabilité et la pertinence de nos analyses s’affinent avec l’avancée et le développement du programme. De nouveaux graphiques
+                viendront s’ajouter au blog au fur et à mesure de la campagne.
+                La communication de nos analyses nous a paru d’emblée être
+                un aspect essentiel du projet. C’est pourquoi nous avons pris le
+                parti de travailler en étroite collaboration avec un graphiste qui a accompagné le projet, le rendant compréhensible en un coup d’oeil.
+                Cette vulgarisation des données nous permet de toucher un public
+                aussi large que possible.</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+                <!-- Volume par candidats-->
+                <h2>Contact</h2>
+                <hr class="blue-style">
+                <a href="mailto:mail@big-bang-data.com" style="text-decoration:none;"><p class="blue-style">Email: <b class="blue-style">mail@big-bang-data.com</b></p></a>
+                <a href="https://www.facebook.com/BBangData/" style="text-decoration:none;"><p class="blue-style">Facebook: <b class="blue-style">@BBangData</b></p></a>
+                <a href="https://twitter.com/BBangData" style="text-decoration:none;"><p class="blue-style">Twitter: <b class="blue-style">@BBangData</b></p></a>                
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer navbar-fixed-bottom">
+    <div class="row footer-row">
+        <div class="col-md-5 col-sm-12">
+            <h2 class="footer-style">Big-Bang-Data Project</h2>
+            <p class="footer-style">
+            Big-Bang-Data est un collectif de data-scientists et de designers réunis autour d'une même passion: le traitement et la visualisation de données. Ce projet s'appuie sur les technologies suivantes: Python, et D3js.
+            Les résultats affichés sur ce site proviennent d'une analyse statistique en temps réel de données récupérées sur l'api publique de Twitter. L'équipe de Big-Bang-Data se réserve le droit de décliner toute responsabilité concernant l'actualité, l'exactitude, la complétude ou la qualité des informations fournies. </p>
+        </div>
+        <div class="col-md-3 col-md-offset-4 col-sm-12">
+            <h2 class="footer-style">Menu</h2>
+            <ul>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com">Home</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/primairegauche">Primaire de gauche</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/contact.html">Contact</a></li>
+            </ul> 
+        </div>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,147 @@
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://rawgithub.com/palantir/plottable/master/plottable.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="https://rawgithub.com/palantir/plottable/master/plottable.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-90452208-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <style>.star-title{fill: #2C3E50;} .star-label{fill: #2C3E50;}</style>
+</head>
+
+<header>
+    <div class="container-fluid">
+        <div class="row vertical-align-md" id="header-panel" >
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" style="text-decoration:none;"><img class="logo" src="big-bang-data-logo.svg" alt="Big Bang Data"></a>
+                <h3>tendances politiques en temps réel</h3>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <a href="http://big-bang-data.com" 
+                class="btn button-home" role="button"><span>Election générale</span></a>
+                <a href="http://big-bang-data.com/primairegauche" 
+                class="btn button-primaire" role="button" style="color: #E6493C;"><span>Primaire de gauche</span></a>
+                <a href="http://big-bang-data.com/contact.html" 
+                class="btn" role="button" id="button-contact">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body class="blue-style"> 
+    <div class="container-fluid">
+        <div class="row" id="top-panel">
+            <div class="col-md-9 col-sm-12">
+                <!-- Tendances-->
+                <h2 class="blue-style">Tendances globales</h2>
+                <hr class="blue-style">
+                <svg id="plottable_star" class="plottable_star" preserveAspectRatio="xMidYMid meet"></svg>
+                <script type="text/javascript" src="js/plottable_radar.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row explanation-row">
+            <div class="col-md-9 col-sm-12 explanation-div">
+                <h2 class="blue-style">Explications :</h2>
+                <hr class="blue-style">
+                <p class="blue-style"> 
+                Le diagramme radar ci-dessus présente les tendances globales des tweets mentionnant les quatre candidats en lice pour l'élection génerale.
+                Chaque branche représente un des principaux domaines évoqués lors des élections.
+                Le fonctionnement est le suivant : plus le point de contact entre la courbe et l'axe du domaine est éloigné du centre de l'étoile, plus le domaine en question a été associé à l'un des candidats.
+                Les trois courbes représentent les tendances de la journée, de la semaine, et depuis le début de la campagne.
+                </p>
+                <p class="blue-style">
+                Un tweet est associé à un candidat lorsque son nom apparaît dans un :
+                <ul>
+                    <li>user mention (@mention)</li>
+                    <li>hashtag (#hashtag)</li>
+                </ul> 
+                </p>
+                <p class="blue-style">
+                Mots clés permettant l’association d’un tweet à un domaine : <br><br>
+                <center>     
+                    <table>
+                        <thead>
+                        <tr>
+                            <th width="20%">Domaine</th>
+                            <th width="80%">Mots clés</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Enseignement</td>
+                            <td>école, université, enseignants, profs, collège, primaire, maternelle, enseignement, éducation, éducation nationale, scolarité</td>
+                        </tr>
+                        <tr>
+                            <td>Defense</td>
+                            <td>défense, sécurité, terrorisme, guerre, armée, militaire</td>
+                        </tr>
+                        <tr>
+                            <td>Impots</td>
+                            <td>impôt, taxes, tva, fiscal, fiscalité, CSG, taxe</td>
+                        </tr>
+                        <tr>
+                            <td>Sante</td>
+                            <td>santé, sécurité sociale, sécu, médecine, assurance sociale, assurance maladie, hôpital, hôpitaux, médecins, déserts médicaux, numerus clausus, CMU, tiers payant</td>
+                        </tr>
+                        <tr>
+                            <td>Economie</td>
+                            <td>économie, croissance, budget, chômage, crise, décroissance, infliation, déflation, monnaie, bourse, finance, financier, financière, banque</td>
+                        </tr>
+                        <tr>
+                            <td>Etranger</td>
+                            <td>étranger, relations internationales, relations extérieures, quai d'orsay, europe, ue, union européenne, commission européenne, parlement européen,  sérieux budgétaire, normes budgétaires</td>
+                        </tr>
+                        <tr>
+                            <td>Immigration</td>
+                            <td>immigration, immigrés, intégration, clandestin, migrants, migrant</td>
+                        </tr>
+                        <tr>
+                            <td>Bilan</td>
+                            <td>bilan</td>
+                        </tr>
+                        </tbody>
+                    </table>       
+                </center>
+                <br>
+                <p class="blue-style">
+                Les domaines ont été choisis de manière subjective parmis les mots les plus fréquemment rencontrés dans les tweets. mais ne sont absolument pas à considérer comme un parti pris.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer navbar-fixed-bottom">
+    <div class="row footer-row">
+        <div class="col-md-5 col-sm-12">
+            <h2 class="footer-style">Big-Bang-Data Project</h2>
+            <p class="footer-style">
+            Big-Bang-Data est un collectif de data-scientists et de designers réunis autour d'une même passion: le traitement et la visualisation de données. Ce projet s'appuie sur les technologies suivantes: Python, et D3js.
+            Les résultats affichés sur ce site proviennent d'une analyse statistique en temps réel de données récupérées sur l'api publique de Twitter. L'équipe de Big-Bang-Data se réserve le droit de décliner toute responsabilité concernant l'actualité, l'exactitude, la complétude ou la qualité des informations fournies. </p>
+        </div>
+        <div class="col-md-3 col-md-offset-4 col-sm-12">
+            <h2 class="footer-style">Menu</h2>
+            <ul>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com">Home</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/primairegauche">Primaire de gauche</a></li>
+                <li class="footer-style"><a class="footer-style" href="http://big-bang-data.com/contact.html">Contact</a></li>
+            </ul> 
+        </div>
+    </div>
+</footer>
+</html>
